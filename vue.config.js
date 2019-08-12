@@ -1,3 +1,6 @@
 module.exports = {
-  publicPath: "vue-cascading-dynamic-dropdown-menu/"
+  chainWebpack: config => {
+    config.module.rules.delete('eslint');
+  },
+  publicPath: 'vue-cascading-dynamic-dropdown-menu/'
 }
