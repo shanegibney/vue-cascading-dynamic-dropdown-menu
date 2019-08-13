@@ -4,7 +4,7 @@ This project demonstrates how to create a dynamic dropdown menu (sub-topics). Th
 
 gh-pages [demo](https://shanegibney.github.io/vue-cascading-dynamic-dropdown-menu/)
 
-<a href="https://shanegibney.github.io/vue-cascading-dynamic-dropdown-menu/"><img width="525" alt="Screenshot 2019-08-12 at 16 37 54" src="https://user-images.githubusercontent.com/17167992/62877822-c481fd80-bd1f-11e9-9d6d-14d785eb1255.png"></a>
+<a href="https://shanegibney.github.io/vue-cascading-dynamic-dropdown-menu/"><img width="1145" alt="Screenshot 2019-08-13 at 01 40 31" src="https://user-images.githubusercontent.com/17167992/62907500-7397f680-bd6b-11e9-98b7-2e3841fe3d55.png"></a>
 
 ## Project setup
 ```

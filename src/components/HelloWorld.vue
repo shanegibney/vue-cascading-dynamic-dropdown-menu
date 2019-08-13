@@ -1,28 +1,37 @@
 <template>
 <div class="hello">
   <div class="container">
-    <div class="row">
-      <div class="col-md-3">
-      </div>
-      <div class="col-md-3">
-        <div class="dropdown">
-          <label for="topic">Topic: </label>
-          <select v-model="selectedTopic" name="topic" id="topic">
-            <option v-for="(topic_obj, topic) in subjects" :value="topic">{{topic}}</option>
-          </select>
-          <p>Selected topic: {{selectedTopic}}</p>
+    <div class="jumbotron">
+      <div class="row">
+        <div class="col-md-12">
+          <h3>Dual Dynamic Cascade Dropdown Menu: </h3>
         </div>
       </div>
-      <div class="col-md-3">
-        <div class="dropdown">
-          <label for="subtopic">Sub-topic: </label>
-          <select v-model="selectedSubTopic" name="subtopic" id="subtopic">
-            <option v-for="subTopics in subTopics">{{subTopics}}</option>
-          </select>
-          <p>Selected sub-topic: {{selectedSubTopic}}</p>
+      <div class="row">
+        <div class="col-md-4 inputs">
+          <div class="dropdown">
+            <strong>Topic: </strong>
+            <select v-model="selectedTopic" name="topic" id="topic">
+              <option v-for="(topic_obj, topic) in subjects" :value="topic">{{topic}}</option>
+            </select>
+          </div>
+        </div>
+        <div class="col-md-8 inputs">
+          <span v-if="selectedTopic">Selected topic: {{selectedTopic}}</span>
         </div>
       </div>
-      <div class="col-md-3">
+      <div class="row">
+        <div class="col-md-4 inputs">
+          <div class="dropdown">
+            <strong>Sub-topic: </strong>
+            <select :disabled="subTopics.length == 0" v-model="selectedSubTopic" name="subtopic" id="subtopic">
+              <option v-for="subTopics in subTopics">{{subTopics}}</option>
+            </select>
+          </div>
+        </div>
+        <div class="col-md-8 inputs">
+          <span v-if="selectedSubTopic">Selected sub-topic: {{selectedSubTopic}}</span>
+        </div>
       </div>
     </div>
   </div>
@@ -44,8 +53,8 @@ export default {
         "Topic Two": ["Sub-topic Two A", "Sub-topic Two B", "Sub-topic Two C"],
         "Topic Three": ["Sub-topic Three A", "Sub-topic Three B", "Sub-topic Three C"]
       },
-      topics: [""],
-      subTopics: [""],
+      topics: [],
+      subTopics: [],
       selectedTopic: "",
       selectedSubTopic: ""
     }
@@ -81,5 +90,13 @@ li {
 
 a {
   color: #42b983;
+}
+
+.inputs {
+  text-align: left;
+}
+
+.row {
+  margin: 15px;
 }
 </style>
